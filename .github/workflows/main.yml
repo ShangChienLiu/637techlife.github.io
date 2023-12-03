@@ -2,48 +2,48 @@ name: Notion2Hexo
 on:
   workflow_dispatch:
   schedule:
-   - cron: '*/30 1-17/1 * * *'
+   - cron: '*/30 1-17/1 * * *'
 permissions:
   contents: write
 jobs:
   notionSyncTask:
-    name: Notion2hexo on ubuntu-latest
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout blog and theme
-        uses: actions/checkout@v3
-        with:
-          submodules: 'recursive'
-          fetch-depth: 0
-      - name: Check the NOTION_SYNC_DATETIME
-        id: GetNotionSyncDatetime
-        run: |
-          NOTION_SYNC_DATETIME=$(git log -n 1 --grep="NotionSync" --format="%aI")
-          echo "NOTION_SYNC_DATETIME=$NOTION_SYNC_DATETIME" >> "$GITHUB_OUTPUT"
-          echo -e "Latest notion sync datetime:\n$NOTION_SYNC_DATETIME"
+    name: Notion2hexo on ubuntu-latest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout blog and theme
+        uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+          fetch-depth: 0
+      - name: Check the NOTION_SYNC_DATETIME
+        id: GetNotionSyncDatetime
+        run: |
+          NOTION_SYNC_DATETIME=$(git log -n 1 --grep="NotionSync" --format="%aI")
+          echo "NOTION_SYNC_DATETIME=$NOTION_SYNC_DATETIME" >> "$GITHUB_OUTPUT"
+          echo -e "Latest notion sync datetime:\n$NOTION_SYNC_DATETIME"
       - name: Convert notion to markdown
-        id: NotionSync
-        uses: Doradx/notion2markdown-action@v1
-        with:
-          notion_secret: ${{ secrets.NOTION_SECRET }}
-          database_id: ${{ secrets.NOTION_DATABASE_ID }}
-          pic_migrate: true
-          pic_bed_config: ${{ secrets.PICBED_CONFIG }}
-          pic_compress: true
-          output_page_dir: 'source'
-          output_post_dir: 'source/_posts/notion'
-          clean_unpublished_post: true
-          metas_keeped: abbrlink
-          metas_excluded: pstatus,ptype
-          last_sync_datetime: ${{ steps.GetNotionSyncDatetime.outputs.NOTION_SYNC_DATETIME }}
-      - name: Hexo deploy
-        if: steps.NotionSync.outputs.updated_count != '0'
-        run: |
-          git pull
-          npm install && npm run deploy
-      - name: Commit & Push
-        if: steps.NotionSync.outputs.updated_count != '0'
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          file_pattern: 'source/'
-          commit_message: Automatic NotionSync.
+        id: NotionSync
+        uses: Doradx/notion2markdown-action@v1
+        with:
+          notion_secret: ${{ secrets.NOTION_SECRET }}
+          database_id: ${{ secrets.NOTION_DATABASE_ID }}
+          pic_migrate: true
+          pic_bed_config: ${{ secrets.PICBED_CONFIG }}
+          pic_compress: true
+          output_page_dir: 'source'
+          output_post_dir: 'source/_posts/notion'
+          clean_unpublished_post: true
+          metas_keeped: abbrlink
+          metas_excluded: pstatus,ptype
+          last_sync_datetime: ${{ steps.GetNotionSyncDatetime.outputs.NOTION_SYNC_DATETIME }}
+      - name: Hexo deploy
+        if: steps.NotionSync.outputs.updated_count != '0'
+        run: |
+          git pull
+          npm install && npm run deploy
+      - name: Commit & Push
+        if: steps.NotionSync.outputs.updated_count != '0'
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: 'source/'
+          commit_message: Automatic NotionSync.
