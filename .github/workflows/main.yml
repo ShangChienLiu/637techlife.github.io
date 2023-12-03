@@ -1,31 +1,49 @@
-# This is a basic workflow to help you get started with Actions
-    
-name: Notion to Github Pages
-  
-# Controls when the workflow will run
+name: Notion2Hexo
 on:
-  schedule:
-    - cron: '0 23 * * *'    
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+  schedule:
+   - cron: '*/30 1-17/1 * * *'
+permissions:
+  contents: write
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  notionSyncTask:
+    name: Notion2hexo on ubuntu-latest
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Checkout
+      - name: Checkout blog and theme
         uses: actions/checkout@v3
-      - name: Build
-        run: npm i -g notablog && notablog generate .
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          repository-name: kennysuper007/637techlife.github.io
-          branch: doc          
-          folder: public
+          submodules: 'recursive'
+          fetch-depth: 0
+      - name: Check the NOTION_SYNC_DATETIME
+        id: GetNotionSyncDatetime
+        run: |
+          NOTION_SYNC_DATETIME=$(git log -n 1 --grep="NotionSync" --format="%aI")
+          echo "NOTION_SYNC_DATETIME=$NOTION_SYNC_DATETIME" >> "$GITHUB_OUTPUT"
+          echo -e "Latest notion sync datetime:\n$NOTION_SYNC_DATETIME"
+      - name: Convert notion to markdown
+        id: NotionSync
+        uses: Doradx/notion2markdown-action@v1
+        with:
+          notion_secret: ${{ secrets.NOTION_SECRET }}
+          database_id: ${{ secrets.NOTION_DATABASE_ID }}
+          pic_migrate: true
+          pic_bed_config: ${{ secrets.PICBED_CONFIG }}
+          pic_compress: true
+          output_page_dir: 'source'
+          output_post_dir: 'source/_posts/notion'
+          clean_unpublished_post: true
+          metas_keeped: abbrlink
+          metas_excluded: pstatus,ptype
+          last_sync_datetime: ${{ steps.GetNotionSyncDatetime.outputs.NOTION_SYNC_DATETIME }}
+      - name: Hexo deploy
+        if: steps.NotionSync.outputs.updated_count != '0'
+        run: |
+          git pull
+          npm install && npm run deploy
+      - name: Commit & Push
+        if: steps.NotionSync.outputs.updated_count != '0'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          file_pattern: 'source/'
+          commit_message: Automatic NotionSync.
