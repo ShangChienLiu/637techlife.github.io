@@ -1,36 +1,49 @@
-name: Notion2Hexo
+name: Notion2Hexo GP
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '*/30 1-17/1 * * *'
+  repository_dispatch:
+    types:
+      - notion_sync
+
+concurrency:
+  group: notion-sync-${{ github.ref }}
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   notionSyncTask:
-    name: Notion2hexo on ubuntu-latest
+    name: Notion2Hexo on ${{ matrix.os }}
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node_version: [14.x]
+    outputs:
+      HAS_CHANGES: ${{ steps.NotionSync.outputs.updated_count != '0' }}
     steps:
       - name: Checkout blog and theme
         uses: actions/checkout@v3
         with:
           submodules: 'recursive'
           fetch-depth: 0
-
       - name: Check the NOTION_SYNC_DATETIME
         id: GetNotionSyncDatetime
         run: |
+          echo -e "Latest commit id: $(git rev-parse HEAD)"
+          echo -e "Latest notion sync commit:\n$(git log -n 1 --grep="NotionSync")"
           NOTION_SYNC_DATETIME=$(git log -n 1 --grep="NotionSync" --format="%aI")
+          echo "NOTION_SYNC_DATETIME: $NOTION_SYNC_DATETIME"
           echo "NOTION_SYNC_DATETIME=$NOTION_SYNC_DATETIME" >> "$GITHUB_OUTPUT"
-          echo -e "Latest notion sync datetime:\n$NOTION_SYNC_DATETIME"
-
       - name: Convert notion to markdown
         id: NotionSync
         uses: Doradx/notion2markdown-action@v1
         with:
-          notion_secret: ${{ secrets.NOTION_SECRET }}
+          notion_secret: ${{ secrets.NOTION_TOKEN }}
           database_id: ${{ secrets.NOTION_DATABASE_ID }}
           pic_migrate: true
           pic_bed_config: ${{ secrets.PICBED_CONFIG }}
@@ -38,19 +51,39 @@ jobs:
           output_page_dir: 'source'
           output_post_dir: 'source/_posts/notion'
           clean_unpublished_post: true
-          metas_keeped: abbrlink
-          metas_excluded: pstatus,ptype
           last_sync_datetime: ${{ steps.GetNotionSyncDatetime.outputs.NOTION_SYNC_DATETIME }}
-
-      - name: Hexo deploy
+          timezone: 'Asia/Shanghai'
+      - name: Sync git
         if: steps.NotionSync.outputs.updated_count != '0'
         run: |
           git pull
-          npm install && npm run deploy
-
+      - name: Use Node.js ${{ matrix.node_version }}
+        if: steps.NotionSync.outputs.updated_count != '0'
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node_version }}
+          cache: 'npm'
+      - name: Install dependencies & build
+        if: steps.NotionSync.outputs.updated_count != '0'
+        run: |
+          npm install
+          npm run build
       - name: Commit & Push
         if: steps.NotionSync.outputs.updated_count != '0'
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           file_pattern: 'source/'
           commit_message: Automatic NotionSync.
+      - name: Setup Pages
+        if: steps.NotionSync.outputs.updated_count != '0'
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        if: steps.NotionSync.outputs.updated_count != '0'
+        uses: actions/upload-pages-artifact@v2
+        with:
+          # Upload the public dir
+          path: './public'
+      - name: Deploy to GitHub Pages
+        if: steps.NotionSync.outputs.updated_count != '0'
+        id: deployment
+        uses: actions/deploy-pages@v2
