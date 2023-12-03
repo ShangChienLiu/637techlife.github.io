@@ -57,12 +57,11 @@ jobs:
         if: steps.NotionSync.outputs.updated_count != '0'
         run: |
           git pull
-      - name: Use Node.js ${{ matrix.node_version }}
+      - name: Setup Node.js
         if: steps.NotionSync.outputs.updated_count != '0'
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node_version }}
-          cache: 'npm'
+          node-version: '16'  # Hexo 需要的 Node.js 版本
       - name: Install dependencies & build
         if: steps.NotionSync.outputs.updated_count != '0'
         run: |
