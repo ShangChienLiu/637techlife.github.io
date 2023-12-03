@@ -45,14 +45,14 @@ jobs:
         with:
           notion_secret: ${{ secrets.NOTION_TOKEN }}
           database_id: ${{ secrets.NOTION_DATABASE_ID }}
-          pic_migrate: true
+          pic_migrate: false
           pic_bed_config: ${{ secrets.PICBED_CONFIG }}
           pic_compress: true
           output_page_dir: 'source'
           output_post_dir: 'source/_posts/notion'
           clean_unpublished_post: true
           last_sync_datetime: ${{ steps.GetNotionSyncDatetime.outputs.NOTION_SYNC_DATETIME }}
-          timezone: 'Asia/Shanghai'
+          timezone: 'Asia/Taipei'
       - name: Sync git
         if: steps.NotionSync.outputs.updated_count != '0'
         run: |
