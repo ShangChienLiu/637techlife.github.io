@@ -27,5 +27,5 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           repository-name: kennysuper007/637techlife.github.io
-          branch: doc          
-          folder: public
+          branch: gh-pages        
+          folder: ./public/
