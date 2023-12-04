@@ -16,14 +16,14 @@
   <meta name="author" content="Shang Chien Liu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="测试各类blocks的转换效果, 包括link_preview， bookmark，pdf，embed和video。该文展示一些最新的效果。">
+    <meta name="description" content="Test the conversion effect of various blocks, including link_preview, bookmark, pdf, embed, and video. This article shows some of the latest results.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Notion2markdown转换效果测试">
+<meta property="og:title" content="Notion2markdown_ conversion test">
 <meta property="og:url" content="https://637techlife.com/2023/12/03/notion2markdown-test/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="测试各类blocks的转换效果, 包括link_preview， bookmark，pdf，embed和video。该文展示一些最新的效果。">
+<meta property="og:description" content="Test the conversion effect of various blocks, including link_preview, bookmark, pdf, embed, and video. This article shows some of the latest results.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/de3c4ed2-d664-4666-a4b2-6113bbca1dcc/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20231204/us-west-2/s3/aws4_request&X-Amz-Date=20231204T040202Z&X-Amz-Expires=3600&X-Amz-Signature=3a92d786f7866a3dc0b0f42d46479899c80b5f56594fb9bdfa2a604415e4b7e1&X-Amz-SignedHeaders=host&x-id=GetObject">
+<meta property="og:image" content="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/de3c4ed2-d664-4666-a4b2-6113bbca1dcc/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20231204/us-west-2/s3/aws4_request&X-Amz-Date=20231204T041902Z&X-Amz-Expires=3600&X-Amz-Signature=753e5c9028060d9fc32015e7b65a806a11a7d10bad152479c4605c86c67a9ef7&X-Amz-SignedHeaders=host&x-id=GetObject">
 <meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
 <meta property="og:image" content="https://repository-images.githubusercontent.com/34526884/8e0a5095-5d82-425c-a54f-a0cb51743a12">
 <meta property="og:image" content="https://doradx.notion.site/images/favicon.ico">
@@ -31,6 +31,8 @@
 <meta property="og:image" content="https://static.zhihu.com/heifetz/favicon.ico">
 <meta property="og:image" content="https://www.youtube.com/s/desktop/2a835f78/img/favicon.ico">
 <meta property="og:image" content="https://i.ytimg.com/vi/9gXPmfLWO4U/maxresdefault.jpg">
+<meta property="og:image" content="https://blog.cuger.cn/images/favicon.ico">
+<meta property="og:image" content="https://i.cuger.cn/b/9ccd42f3-36d6-49de-a44c-5d70d910b65e.png">
 <meta property="og:image" content="https://v.qq.com/favicon.ico">
 <meta property="og:image" content="https://puui.qpic.cn/vpic_cover/w0040itoklx/w0040itoklx_hz.jpg/496">
 <meta property="og:image" content="https://zh.wikipedia.org/static/favicon/wikipedia.ico">
@@ -39,18 +41,18 @@
 <meta property="og:image" content="https://lh5.googleusercontent.com/p/AF1QipPJpAUvGa74H1YZegsktcUWLkF-AUb7Vh0r-wTP=w900-h900-k-no-p">
 <meta property="og:image" content="https://a.amap.com/pc/static/favicon.ico">
 <meta property="article:published_time" content="2023-12-03T18:59:00.000Z">
-<meta property="article:modified_time" content="2023-12-04T03:56:00.000Z">
+<meta property="article:modified_time" content="2023-12-04T04:13:00.000Z">
 <meta property="article:author" content="Shang Chien Liu">
 <meta property="article:tag" content="Notion">
 <meta property="article:tag" content="Blog">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/de3c4ed2-d664-4666-a4b2-6113bbca1dcc/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20231204/us-west-2/s3/aws4_request&X-Amz-Date=20231204T040202Z&X-Amz-Expires=3600&X-Amz-Signature=3a92d786f7866a3dc0b0f42d46479899c80b5f56594fb9bdfa2a604415e4b7e1&X-Amz-SignedHeaders=host&x-id=GetObject">
+<meta name="twitter:image" content="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/de3c4ed2-d664-4666-a4b2-6113bbca1dcc/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20231204/us-west-2/s3/aws4_request&X-Amz-Date=20231204T041902Z&X-Amz-Expires=3600&X-Amz-Signature=753e5c9028060d9fc32015e7b65a806a11a7d10bad152479c4605c86c67a9ef7&X-Amz-SignedHeaders=host&x-id=GetObject">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Notion2markdown转换效果测试 - Hexo</title>
+  <title>Notion2markdown_ conversion test - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -259,7 +261,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Notion2markdown转换效果测试"></span>
+            <span id="subtitle" data-typed-text="Notion2markdown_ conversion test"></span>
           
         </div>
 
@@ -293,7 +295,7 @@
         
         
         
-          15 mins
+          16 mins
         
       </span>
     
@@ -352,7 +354,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Notion2markdown转换效果测试</h1>
+            <h1 style="display: none">Notion2markdown_ conversion test</h1>
             
               <p class="note note-info">
                 
@@ -365,7 +367,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="image"><a href="#image" class="headerlink" title="image"></a>image</h1><p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/de3c4ed2-d664-4666-a4b2-6113bbca1dcc/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20231204/us-west-2/s3/aws4_request&X-Amz-Date=20231204T040202Z&X-Amz-Expires=3600&X-Amz-Signature=3a92d786f7866a3dc0b0f42d46479899c80b5f56594fb9bdfa2a604415e4b7e1&X-Amz-SignedHeaders=host&x-id=GetObject" srcset="/img/loading.gif" lazyload></p>
+                <h1 id="image"><a href="#image" class="headerlink" title="image"></a>image</h1><p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/de3c4ed2-d664-4666-a4b2-6113bbca1dcc/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20231204/us-west-2/s3/aws4_request&X-Amz-Date=20231204T041902Z&X-Amz-Expires=3600&X-Amz-Signature=753e5c9028060d9fc32015e7b65a806a11a7d10bad152479c4605c86c67a9ef7&X-Amz-SignedHeaders=host&x-id=GetObject" srcset="/img/loading.gif" lazyload></p>
 <h1 id="link-preview"><a href="#link-preview" class="headerlink" title="link_preview"></a>link_preview</h1><h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><p><a href="">link_preview</a></p>
 <p><a href="">link_preview</a></p>
 <div style="width: 100%; margin-top: 4px; margin-bottom: 4px;"><div style="display: flex; background:white;border-radius:5px"><a href="https://github.com/ant-design/ant-design/actions/runs/4737049877"target="_blank"rel="noopener noreferrer"style="display: flex; color: inherit; text-decoration: none; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; flex-grow: 1; min-width: 0px; flex-wrap: wrap-reverse; align-items: stretch; text-align: left; overflow: hidden; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 5px; position: relative; fill: inherit;"><div style="flex: 4 1 180px; padding: 12px 14px 14px; overflow: hidden; text-align: left;"><div style="font-size: 14px; line-height: 20px; color: rgb(55, 53, 47); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-height: 24px; margin-bottom: 2px;">PR Check CI · ant-design/ant-design@e073fc7</div><div style="font-size: 12px; line-height: 16px; color: rgba(55, 53, 47, 0.65); height: 32px; overflow: hidden;">An enterprise-class UI design language and React UI library - PR Check CI · ant-design/ant-design@e073fc7</div><div style="display: flex; margin-top: 6px; height: 16px;"><img src="https://github.githubassets.com/favicons/favicon.svg" srcset="/img/loading.gif" lazyloadstyle="width: 16px; height: 16px; min-width: 16px; margin-right: 6px;"><div style="font-size: 12px; line-height: 16px; color: rgb(55, 53, 47); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">https://github.com/ant-design/ant-design/actions/runs/4737049877</div></div></div><div style="flex: 1 1 180px; display: block; position: relative;"><div style="position: absolute; inset: 0px;"><div style="width: 100%; height: 100%;"><img src="https://repository-images.githubusercontent.com/34526884/8e0a5095-5d82-425c-a54f-a0cb51743a12" srcset="/img/loading.gif" lazyload referrerpolicy="no-referrer" style="display: block; object-fit: cover; border-radius: 3px; width: 100%; height: 100%;"></div></div></div></a></div></div>
@@ -374,7 +376,7 @@
 <h1 id="mention"><a href="#mention" class="headerlink" title="mention"></a>mention</h1><div style="width: 100%; margin-top: 4px; margin-bottom: 4px;"><div style="display: flex; background:white;border-radius:5px"><a href="https://doradx.notion.site/397943b2d0384e15ba69448900823984?v=06762d5d3e2140e399c03d84131ee682"target="_blank"rel="noopener noreferrer"style="display: flex; color: inherit; text-decoration: none; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; flex-grow: 1; min-width: 0px; flex-wrap: wrap-reverse; align-items: stretch; text-align: left; overflow: hidden; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 5px; position: relative; fill: inherit;"><div style="flex: 4 1 180px; padding: 12px 14px 14px; overflow: hidden; text-align: left;"><div style="font-size: 14px; line-height: 20px; color: rgb(55, 53, 47); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-height: 24px; margin-bottom: 2px;">Notion – The all-in-one workspace for your notes, tasks, wikis, and databases.</div><div style="font-size: 12px; line-height: 16px; color: rgba(55, 53, 47, 0.65); height: 32px; overflow: hidden;">A new tool that blends your everyday work apps into one. It's the all-in-one workspace for you and your team</div><div style="display: flex; margin-top: 6px; height: 16px;"><img src="https://doradx.notion.site/images/favicon.ico" srcset="/img/loading.gif" lazyloadstyle="width: 16px; height: 16px; min-width: 16px; margin-right: 6px;"><div style="font-size: 12px; line-height: 16px; color: rgb(55, 53, 47); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">https://doradx.notion.site/397943b2d0384e15ba69448900823984?v=06762d5d3e2140e399c03d84131ee682</div></div></div><div style="flex: 1 1 180px; display: block; position: relative;"><div style="position: absolute; inset: 0px;"><div style="width: 100%; height: 100%;"><img src="https://www.notion.so/images/meta/default.png" srcset="/img/loading.gif" lazyload referrerpolicy="no-referrer" style="display: block; object-fit: cover; border-radius: 3px; width: 100%; height: 100%;"></div></div></div></a></div></div>
 
 <p><a href="/39ef4ca8ddcf40ce8b625a8698e25c10">页面模板</a></p>
-<h1 id="pdf"><a href="#pdf" class="headerlink" title="pdf"></a>pdf</h1><h2 id="本地"><a href="#本地" class="headerlink" title="本地"></a>本地</h2><div class="pdf"><iframe src="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/99b71d70-f1cb-4957-9bbf-4760bec39c50/PDF.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231204%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231204T040202Z&X-Amz-Expires=3600&X-Amz-Signature=2cea8ca91fb7c5382dd41aca144ea610aa709a600765710756fff92d55714e07&X-Amz-SignedHeaders=host&x-id=GetObject" style="width: 100%; margin:0; aspect-ratio: 16/9;"></iframe><div style="text-align: center; margin:0;"><p>测试的本地文件</p></div></div>
+<h1 id="pdf"><a href="#pdf" class="headerlink" title="pdf"></a>pdf</h1><h2 id="本地"><a href="#本地" class="headerlink" title="本地"></a>本地</h2><div class="pdf"><iframe src="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/99b71d70-f1cb-4957-9bbf-4760bec39c50/PDF.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231204%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231204T041902Z&X-Amz-Expires=3600&X-Amz-Signature=5dbccde70343fb2505fd5f3c49fecb6347da02c8f81d489f9018a29a7c3b63b9&X-Amz-SignedHeaders=host&x-id=GetObject" style="width: 100%; margin:0; aspect-ratio: 16/9;"></iframe><div style="text-align: center; margin:0;"><p>测试的本地文件</p></div></div>
 
 <h2 id="远程文件"><a href="#远程文件" class="headerlink" title="远程文件"></a>远程文件</h2><div class="pdf"><iframe src="https://www.africau.edu/images/default/sample.pdf" style="width: 100%; margin:0; aspect-ratio: 16/9;"></iframe><div style="text-align: center; margin:0;"><p>远程文件URL</p></div></div>
 
@@ -390,7 +392,7 @@
 
 <div style="width: 100%; margin-top: 4px; margin-bottom: 4px;"><div style="display: flex; background:white;border-radius:5px"><a href="https://wangyunzi.com/posts/notion/64/"target="_blank"rel="noopener noreferrer"style="display: flex; color: inherit; text-decoration: none; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; flex-grow: 1; min-width: 0px; flex-wrap: wrap-reverse; align-items: stretch; text-align: left; overflow: hidden; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 5px; position: relative; fill: inherit;"><div style="flex: 4 1 180px; padding: 12px 14px 14px; overflow: hidden; text-align: left;"><div style="font-size: 14px; line-height: 20px; color: rgb(55, 53, 47); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-height: 24px; margin-bottom: 2px;"></div><div style="font-size: 12px; line-height: 16px; color: rgba(55, 53, 47, 0.65); height: 32px; overflow: hidden;"></div><div style="display: flex; margin-top: 6px; height: 16px;"><img src="" srcset="/img/loading.gif" lazyloadstyle="width: 16px; height: 16px; min-width: 16px; margin-right: 6px;"><div style="font-size: 12px; line-height: 16px; color: rgb(55, 53, 47); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">https://wangyunzi.com/posts/notion/64/</div></div></div></a></div></div>
 
-<div style="width: 100%; margin-top: 4px; margin-bottom: 4px;"><div style="display: flex; background:white;border-radius:5px"><a href="https://blog.cuger.cn/p/634642fd/"target="_blank"rel="noopener noreferrer"style="display: flex; color: inherit; text-decoration: none; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; flex-grow: 1; min-width: 0px; flex-wrap: wrap-reverse; align-items: stretch; text-align: left; overflow: hidden; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 5px; position: relative; fill: inherit;"><div style="flex: 4 1 180px; padding: 12px 14px 14px; overflow: hidden; text-align: left;"><div style="font-size: 14px; line-height: 20px; color: rgb(55, 53, 47); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-height: 24px; margin-bottom: 2px;">blog.cuger.cn</div><div style="font-size: 12px; line-height: 16px; color: rgba(55, 53, 47, 0.65); height: 32px; overflow: hidden;"></div><div style="display: flex; margin-top: 6px; height: 16px;"><img src="" srcset="/img/loading.gif" lazyloadstyle="width: 16px; height: 16px; min-width: 16px; margin-right: 6px;"><div style="font-size: 12px; line-height: 16px; color: rgb(55, 53, 47); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">https://blog.cuger.cn/p/634642fd/</div></div></div></a></div></div>
+<div style="width: 100%; margin-top: 4px; margin-bottom: 4px;"><div style="display: flex; background:white;border-radius:5px"><a href="https://blog.cuger.cn/p/634642fd/"target="_blank"rel="noopener noreferrer"style="display: flex; color: inherit; text-decoration: none; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; flex-grow: 1; min-width: 0px; flex-wrap: wrap-reverse; align-items: stretch; text-align: left; overflow: hidden; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 5px; position: relative; fill: inherit;"><div style="flex: 4 1 180px; padding: 12px 14px 14px; overflow: hidden; text-align: left;"><div style="font-size: 14px; line-height: 20px; color: rgb(55, 53, 47); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-height: 24px; margin-bottom: 2px;">Notion2Markdown联动发布Hexo博客-自动化部署方案</div><div style="font-size: 12px; line-height: 16px; color: rgba(55, 53, 47, 0.65); height: 32px; overflow: hidden;">Notion+Hexo+Github Actions自动发布方案, 终于可以解放双手啦!（本文采用Notion撰写）</div><div style="display: flex; margin-top: 6px; height: 16px;"><img src="https://blog.cuger.cn/images/favicon.ico" srcset="/img/loading.gif" lazyloadstyle="width: 16px; height: 16px; min-width: 16px; margin-right: 6px;"><div style="font-size: 12px; line-height: 16px; color: rgb(55, 53, 47); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">https://blog.cuger.cn/p/634642fd/</div></div></div><div style="flex: 1 1 180px; display: block; position: relative;"><div style="position: absolute; inset: 0px;"><div style="width: 100%; height: 100%;"><img src="https://i.cuger.cn/b/9ccd42f3-36d6-49de-a44c-5d70d910b65e.png" srcset="/img/loading.gif" lazyload referrerpolicy="no-referrer" style="display: block; object-fit: cover; border-radius: 3px; width: 100%; height: 100%;"></div></div></div></a></div></div>
 
 <div style="width: 100%; margin-top: 4px; margin-bottom: 4px;"><div style="display: flex; background:white;border-radius:5px"><a href="https://v.qq.com/x/cover/mzc00200kbyx9c8/w0040itoklx.html"target="_blank"rel="noopener noreferrer"style="display: flex; color: inherit; text-decoration: none; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; flex-grow: 1; min-width: 0px; flex-wrap: wrap-reverse; align-items: stretch; text-align: left; overflow: hidden; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 5px; position: relative; fill: inherit;"><div style="flex: 4 1 180px; padding: 12px 14px 14px; overflow: hidden; text-align: left;"><div style="font-size: 14px; line-height: 20px; color: rgb(55, 53, 47); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-height: 24px; margin-bottom: 2px;">狗果定理_电影_高清完整版视频在线观看_腾讯视频</div><div style="font-size: 12px; line-height: 16px; color: rgba(55, 53, 47, 0.65); height: 32px; overflow: hidden;">狗果定理,电影简介:一个热爱动物的老奶奶，在无力照顾果汁时费尽心思替果汁寻找新的幸福生活，却又在机缘巧合下让果汁感受了不同家庭的喜怒哀乐。</div><div style="display: flex; margin-top: 6px; height: 16px;"><img src="https://v.qq.com/favicon.ico" srcset="/img/loading.gif" lazyloadstyle="width: 16px; height: 16px; min-width: 16px; margin-right: 6px;"><div style="font-size: 12px; line-height: 16px; color: rgb(55, 53, 47); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">https://v.qq.com/x/cover/mzc00200kbyx9c8/w0040itoklx.html</div></div></div><div style="flex: 1 1 180px; display: block; position: relative;"><div style="position: absolute; inset: 0px;"><div style="width: 100%; height: 100%;"><img src="https://puui.qpic.cn/vpic_cover/w0040itoklx/w0040itoklx_hz.jpg/496" srcset="/img/loading.gif" lazyload referrerpolicy="no-referrer" style="display: block; object-fit: cover; border-radius: 3px; width: 100%; height: 100%;"></div></div></div></a></div></div>
 
@@ -461,7 +463,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Notion2markdown转换效果测试</div>
+      <div>Notion2markdown_ conversion test</div>
       <div>https://637techlife.com/2023/12/03/notion2markdown-test/</div>
     </div>
     <div class="license-meta">
@@ -511,15 +513,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/03/about/" title="关于我">
+                      <a href="/2023/12/04/%E8%8D%89%E7%A8%BF%E7%AE%B1/" title="草稿箱">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">关于我</span>
+                        <span class="hidden-mobile">草稿箱</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2023/12/03/about/" title="關於我">
+                        <span class="hidden-mobile">關於我</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
