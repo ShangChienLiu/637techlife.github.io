@@ -60,7 +60,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"637techlife.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":"G-73QLG1MDJ2","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"637techlife.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":true,"scope":["home"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":"G-73QLG1MDJ2","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -195,6 +195,18 @@
           
           
             <li class="nav-item">
+              <a class="nav-link" target="_blank" rel="noopener" href="https://steep-factory-b6f.notion.site/4c454e6e63e34dfe90e4195c94a2d620?v=04fef8bde6114aa2a0c61199557aa706&amp;pvs=4">
+                <i class="iconfont icon-notion-fill"></i>
+                <span>books</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
               <a class="nav-link" href="/links/">
                 <i class="iconfont icon-link-fill"></i>
                 <span>Links</span>
@@ -231,7 +243,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Categories"></span>
+            <span id="subtitle">Categories</span>
           
         </div>
 
@@ -270,22 +282,22 @@
     
     <div class="category row nomargin-x">
       <a class="category-item collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Blog"
-        id="heading-be8df1f28c0abc85a0ed0c6860e5d832" role="tab" data-toggle="collapse" href="#collapse-be8df1f28c0abc85a0ed0c6860e5d832"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Work"
+        id="heading-0f9263536b9fc61ada745644735bfd8f" role="tab" data-toggle="collapse" href="#collapse-0f9263536b9fc61ada745644735bfd8f"
         aria-expanded="false"
       >
-        Blog
+        Work
         <span class="list-group-count"></span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-        <a href="/categories/Blog/" class="category-count col-2 col-md-1 col-xm-1">
+        <a href="/categories/Work/" class="category-count col-2 col-md-1 col-xm-1">
           <i class="iconfont icon-articles"></i>
           <span>1</span>
         </a>
       
-      <div class="category-collapse collapse " id="collapse-be8df1f28c0abc85a0ed0c6860e5d832"
-           role="tabpanel" aria-labelledby="heading-be8df1f28c0abc85a0ed0c6860e5d832">
+      <div class="category-collapse collapse " id="collapse-0f9263536b9fc61ada745644735bfd8f"
+           role="tabpanel" aria-labelledby="heading-0f9263536b9fc61ada745644735bfd8f">
         
         
           
@@ -294,10 +306,10 @@
     
       
       
-        <a href="/2023/12/04/Notion2markdown%E8%BD%89%E6%8F%9B%E6%95%88%E6%9E%9C%E6%B8%AC%E8%A9%A6/" title="Notion2markdown轉換效果測試"
+        <a href="/2023/12/17/FastAPI%20Python%20Framework/" title="FastAPI Python Framework"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">Notion2markdown轉換效果測試</span>
+          <span class="category-post">FastAPI Python Framework</span>
         </a>
       
     
@@ -407,21 +419,6 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
 
 
 
