@@ -1,0 +1,886 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Shang Chien Liu">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="The website matches people with top lawyers based on their case descriptions">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Criminal Lawyer Recommendation System">
+<meta property="og:url" content="https://637techlife.com/2021/09/23/Criminal%20Lawyer%20Recommendation%20System/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="The website matches people with top lawyers based on their case descriptions">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://637techlife.com/img/Criminal-Lawyer-Recommendation-System.png">
+<meta property="article:published_time" content="2021-09-23T10:36:00.000Z">
+<meta property="article:modified_time" content="2024-01-04T20:44:00.000Z">
+<meta property="article:author" content="Shang Chien Liu">
+<meta property="article:tag" content="HTML">
+<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="C#">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="SCSS">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://637techlife.com/img/Criminal-Lawyer-Recommendation-System.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Criminal Lawyer Recommendation System - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"637techlife.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":true,"scope":["home"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":"G-73QLG1MDJ2","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+    <!-- Google gtag.js -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('https://www.googletagmanager.com/gtag/js?id=G-73QLG1MDJ2', function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-73QLG1MDJ2');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>637TechLife Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-notebook"></i>
+                <span>Notes</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>Archives</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>Categories</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    <span>Tags</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" rel="noopener" href="https://steep-factory-b6f.notion.site/4c454e6e63e34dfe90e4195c94a2d620?v=1a18fa69c3b049ba89ca03093192940e&amp;pvs=4">
+                <i class="iconfont icon-books"></i>
+                <span>Books</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>Links</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/city.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">Criminal Lawyer Recommendation System</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-09-23 18:36" pubdate>
+          September 23, 2021 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.2k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          19 mins
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> views
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Criminal Lawyer Recommendation System</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    Last updated on 8 minutes ago
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <aside>
+<img class="emoji" draggable="false" alt="💡" src="https://twemoji.maxcdn.com/v/13.1.0/72x72/1f4a1.png" srcset="/img/loading.gif" lazyload/>Github_link: https://github.com/kennysuper007/Criminal-Lawyer-Recommendation-System
+</aside>
+
+<h1 id="Cover"><a href="#Cover" class="headerlink" title="Cover:"></a>Cover:</h1><p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/74c7c2c8-4752-4e5b-a195-46a3a39cc35b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20240104/us-west-2/s3/aws4_request&X-Amz-Date=20240104T205129Z&X-Amz-Expires=3600&X-Amz-Signature=939635afdac8e288f0d970ad0f457511b69c1968f2da2773e9bbaffc4f48f58d&X-Amz-SignedHeaders=host&x-id=GetObject" srcset="/img/loading.gif" lazyload></p>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview:"></a>Overview:</h1><p>The Criminal Lawyer Recommendation System is a web-based application that aims to help individuals find appropriate legal representation for criminal cases. By leveraging user-input information such as the type of crime, location, and budget, the system generates a list of recommended criminal lawyers. The application also provides detailed profiles of each recommended lawyer, including their experience, expertise, and client reviews. The project’s value proposition lies in its ability to simplify and streamline the process of finding a suitable criminal lawyer, ultimately saving users time and effort in their search for legal support.</p>
+<h1 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation:"></a>Motivation:</h1><p>Among our project members, one member has previously volunteered at the Legal Services Foundation, where they often saw many people seeking different types of legal aid. These individuals could be categorized into two groups: (1) those seeking legal consultation, and (2) those applying for aid lawyers. A common issue they faced was uncertainty about whether the consulted or aided lawyer was suitable for their case. However, as the purpose of legal aid is to provide necessary legal assistance, “recommending lawyers” is not an action legally authorized for the foundation. Thus, these individuals often struggled with which lawyer to choose. It was observed that if there was a system to recommend lawyers to the consultees, it would enable them to find a suitable lawyer more quickly and effectively. Moreover, such a system could reduce the manpower resources needed for consultations at the Legal Aid Foundation, creating a win-win situation for both the foundation and the users.</p>
+<h1 id="Goal"><a href="#Goal" class="headerlink" title="Goal:"></a>Goal:</h1><p>We aspire to develop a website system that enables the general public to quickly understand their legal issues and relevant case precedents. Through a lawyer recommendation system, they can swiftly connect with suitable attorneys, thereby reducing the time and financial costs associated with finding a lawyer.</p>
+<h1 id="ScreenShot-Demo"><a href="#ScreenShot-Demo" class="headerlink" title="ScreenShot Demo:"></a>ScreenShot Demo:</h1><p>Figure 1: Webpage 1</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/b540a8ac-30e0-444b-b60f-7bd2a5f043f7/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20240104/us-west-2/s3/aws4_request&X-Amz-Date=20240104T205129Z&X-Amz-Expires=3600&X-Amz-Signature=7ecc68984d3d9190eef11fad26071ea13d4de94a8e5c00ff906ebf1430cfb5f0&X-Amz-SignedHeaders=host&x-id=GetObject" srcset="/img/loading.gif" lazyload></p>
+<p>Figure 2: Member Registration</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/316186bc-f524-4247-88ca-91d148290e67/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20240104/us-west-2/s3/aws4_request&X-Amz-Date=20240104T205129Z&X-Amz-Expires=3600&X-Amz-Signature=ad73da04cf3212ece3fef98c99f60e2704ca9299113c93acba890c77621f18e3&X-Amz-SignedHeaders=host&x-id=GetObject" srcset="/img/loading.gif" lazyload></p>
+<p>Figure 3: Registration&#x2F;Login</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/16a76c63-13e8-41e1-bfe1-2bac6c39e813/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20240104/us-west-2/s3/aws4_request&X-Amz-Date=20240104T205129Z&X-Amz-Expires=3600&X-Amz-Signature=ef5f37c458500157d3b7068973eb3b6b16100a82cc54d989e7c05c3dffdadbf8&X-Amz-SignedHeaders=host&x-id=GetObject" srcset="/img/loading.gif" lazyload></p>
+<p>Figure 4: Webpage 2</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/aab97288-3651-40a2-af6a-267c23950306/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20240104/us-west-2/s3/aws4_request&X-Amz-Date=20240104T205129Z&X-Amz-Expires=3600&X-Amz-Signature=2055ea35186dcffccdd197e56f3be3c53732297ad97fe2dfb9a8845e87e386b4&X-Amz-SignedHeaders=host&x-id=GetObject" srcset="/img/loading.gif" lazyload></p>
+<p>Figure 5: Webpage 3</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/e0ec3c91-19be-4d64-9c73-a6e795dd204a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20240104/us-west-2/s3/aws4_request&X-Amz-Date=20240104T205129Z&X-Amz-Expires=3600&X-Amz-Signature=c0674b9e8fc86346f3d0e3c198e986e9d1b50b8558dfded0ce6fb899fded4f5c&X-Amz-SignedHeaders=host&x-id=GetObject" srcset="/img/loading.gif" lazyload></p>
+<p>Figure 6: Webpage 4</p>
+<p><img src="https://raw.githubusercontent.com/kennysuper007/637techlife.github.io/gh-pages/img/img/upload_pictures/ca525e76-c54d-452e-aa42-f64e1dea5a30.png" srcset="/img/loading.gif" lazyload></p>
+<p>Figure 7: Upgrade to Premium</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/b9808175-e294-4147-88ad-c9f792c544f2/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20240104/us-west-2/s3/aws4_request&X-Amz-Date=20240104T205129Z&X-Amz-Expires=3600&X-Amz-Signature=5c5fb36a47a8c2306d0a1eeb638fcc6cefe14b69df1bc2d01d28883909b012b1&X-Amz-SignedHeaders=host&x-id=GetObject" srcset="/img/loading.gif" lazyload></p>
+<p>Figure 8: Lawyer Search</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/71d880e3-3a8c-4b92-a999-f640a94a2c4b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20240104/us-west-2/s3/aws4_request&X-Amz-Date=20240104T205129Z&X-Amz-Expires=3600&X-Amz-Signature=fc1e51974148b0cc99ced1fa7f5ae8cd16e318f92f85d755b1214b73e820ea5f&X-Amz-SignedHeaders=host&x-id=GetObject" srcset="/img/loading.gif" lazyload></p>
+<p>Figure 9: Lawyer Information</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/50c49288-d176-4850-b087-4d016da6853e/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20240104/us-west-2/s3/aws4_request&X-Amz-Date=20240104T205129Z&X-Amz-Expires=3600&X-Amz-Signature=f6fb896f5f4d7eedff986553ebb71c0318928e0ab92cd32d79d405b262fb2226&X-Amz-SignedHeaders=host&x-id=GetObject" srcset="/img/loading.gif" lazyload></p>
+<p>Figure 10: Lawyer Consultation</p>
+<p><img src="https://raw.githubusercontent.com/kennysuper007/637techlife.github.io/gh-pages/img/img/upload_pictures/5ff84597-3eca-4115-996e-24461d819b25.png" srcset="/img/loading.gif" lazyload></p>
+<p>Figure 11: Free Lawyer Consultation</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/dee06f7f-3edb-41df-ad0f-665d0ef9a058/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20240104/us-west-2/s3/aws4_request&X-Amz-Date=20240104T205129Z&X-Amz-Expires=3600&X-Amz-Signature=c119a918c346e13357a9551c33c925599f2706f92de322c811a04f40d3351c45&X-Amz-SignedHeaders=host&x-id=GetObject" srcset="/img/loading.gif" lazyload></p>
+<p>Figure 12: Premium Online Consultation</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/a8fb17b1-d73c-45bc-a6ac-8e9fcefd0f7e/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20240104/us-west-2/s3/aws4_request&X-Amz-Date=20240104T205129Z&X-Amz-Expires=3600&X-Amz-Signature=ac3940053d8bfa2cc35f930345a2077e121caddfd2c217f9646124d6e8936c0f&X-Amz-SignedHeaders=host&x-id=GetObject" srcset="/img/loading.gif" lazyload></p>
+<p>Figure 13: Search Results and Predicted Case Reasons</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/4632d139-9927-4b87-a4cb-8ee469de8e16/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20240104/us-west-2/s3/aws4_request&X-Amz-Date=20240104T205129Z&X-Amz-Expires=3600&X-Amz-Signature=8c26b0eacb396fe5dfcc26210deda36971f4672bcf797ba902e76fe09ec6fdb7&X-Amz-SignedHeaders=host&x-id=GetObject" srcset="/img/loading.gif" lazyload></p>
+<p>Figure 14: Judgment Document Information</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/a4459709-d432-42dd-8733-02b7af239945/f403113a-f913-454f-9800-c1a6d1e57f23/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI/20240104/us-west-2/s3/aws4_request&X-Amz-Date=20240104T205129Z&X-Amz-Expires=3600&X-Amz-Signature=fab6d85b83f6791b657159effcd10067d47f6e6ef30a4d32cee39670b67b1c2b&X-Amz-SignedHeaders=host&x-id=GetObject" srcset="/img/loading.gif" lazyload></p>
+<p>Figure 15: Complex Input Search Results</p>
+<p><img src="https://raw.githubusercontent.com/kennysuper007/637techlife.github.io/gh-pages/img/img/upload_pictures/6ed01427-9d51-4bca-ac90-48b7007afc74.png" srcset="/img/loading.gif" lazyload></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Project/" class="category-chain-item">Project</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/HTML/">#HTML</a>
+      
+        <a href="/tags/Vue/">#Vue</a>
+      
+        <a href="/tags/C/">#C#</a>
+      
+        <a href="/tags/MySQL/">#MySQL</a>
+      
+        <a href="/tags/Python/">#Python</a>
+      
+        <a href="/tags/SCSS/">#SCSS</a>
+      
+        <a href="/tags/JavaScript/">#JavaScript</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Criminal Lawyer Recommendation System</div>
+      <div>https://637techlife.com/2021/09/23/Criminal Lawyer Recommendation System/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Shang Chien Liu</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>September 23, 2021</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Updated on</div>
+          <div>January 5, 2024</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/11/27/PhotoWebsite/" title="PhotoWebsite">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">PhotoWebsite</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/11/23/Java%20Appointment%20System/" title="Java Appointment System">
+                        <span class="hidden-mobile">Java Appointment System</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"dYC0Wpb1z2txgxyze4qdA07c-MdYXbMMI","appKey":"ctr9yGtDCk5SPLLuvomSaluu","path":"window.location.pathname","placeholder":"Say something~","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"en","highlight":false,"recordIP":false,"serverURLs":"https://dyc0wpb1.api.lncldglobal.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('mermaid' in window) {
+        mermaid.init();
+      }
+    });
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-switch-fill"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        Views: 
+        <span id="busuanzi_value_site_pv"></span>
+        
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        Visitors: 
+        <span id="busuanzi_value_site_uv"></span>
+        
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
