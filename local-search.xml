@@ -20,11 +20,11 @@
     
     <tags>
       
+      <tag>JavaScript</tag>
+      
       <tag>HTML</tag>
       
       <tag>CSS</tag>
-      
-      <tag>JavaScript</tag>
       
     </tags>
     
@@ -101,13 +101,13 @@
     
     <tags>
       
-      <tag>HTML</tag>
-      
-      <tag>CSS</tag>
-      
       <tag>Python</tag>
       
       <tag>JavaScript</tag>
+      
+      <tag>HTML</tag>
+      
+      <tag>CSS</tag>
       
       <tag>Prompting</tag>
       
@@ -136,13 +136,13 @@
     
     <tags>
       
-      <tag>CSS</tag>
-      
       <tag>Python</tag>
       
       <tag>SCSS</tag>
       
       <tag>JavaScript</tag>
+      
+      <tag>CSS</tag>
       
       <tag>Shell</tag>
       
@@ -229,11 +229,11 @@
     
     <tags>
       
-      <tag>PHP</tag>
-      
       <tag>HTML</tag>
       
       <tag>CSS</tag>
+      
+      <tag>PHP</tag>
       
       <tag>Laravel</tag>
       
@@ -318,11 +318,11 @@
     
     <tags>
       
-      <tag>HTML</tag>
-      
       <tag>SCSS</tag>
       
       <tag>JavaScript</tag>
+      
+      <tag>HTML</tag>
       
       <tag>React.JS</tag>
       
@@ -376,8 +376,6 @@
     
     <tags>
       
-      <tag>HTML</tag>
-      
       <tag>Vue</tag>
       
       <tag>C#</tag>
@@ -389,6 +387,8 @@
       <tag>SCSS</tag>
       
       <tag>JavaScript</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
