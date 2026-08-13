@@ -8,6 +8,162 @@
   --signal-shadow: 0 28px 70px rgba(31, 48, 67, 0.14);
 }
 
+/* Homepage kinetic atelier ------------------------------------------------ */
+.hero-story {
+  --hero-cream: #fff8eb;
+  --hero-gold: #e6bc68;
+  --hero-ink: #172c3d;
+  --hero-progress: 0;
+  height: 185vh;
+  position: relative;
+}
+
+.hero-story > .header-inner {
+  height: 100vh !important;
+  position: sticky;
+  top: 0;
+}
+
+.hero-story #banner,
+.hero-story #banner .full-bg-img,
+.hero-story #banner .mask {
+  height: 100%;
+}
+
+.hero-story #banner::after {
+  background:
+    radial-gradient(circle at 50% 45%, transparent 28%, rgba(9, 20, 28, 0.18) 100%),
+    linear-gradient(180deg, rgba(8, 20, 28, 0.04), rgba(8, 20, 28, 0.2));
+  content: '';
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.hero-story .banner-text {
+  left: 50%;
+  max-width: min(920px, 84vw);
+  position: absolute !important;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  width: min(920px, 84vw);
+  z-index: 4 !important;
+}
+
+.hero-story .banner-text .h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.75rem, 3.1vw, 3.75rem);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.06;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+  white-space: normal;
+}
+
+.hero-story .banner-text #subtitle,
+.hero-story .banner-text .typed-cursor {
+  color: var(--hero-cream);
+  font-size: inherit;
+  text-shadow: 0 8px 35px rgba(4, 14, 20, 0.34);
+}
+
+.hero-kinetic-type {
+  color: var(--hero-cream);
+  font-family: Arial, Helvetica, sans-serif;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
+}
+
+.hero-kinetic-word {
+  font-kerning: normal;
+  left: var(--hero-left);
+  opacity: var(--hero-opacity, 0);
+  position: absolute;
+  text-rendering: optimizeLegibility;
+  top: var(--hero-top);
+  transform:
+    translate3d(var(--hero-shift-x, 0), var(--hero-shift-y, 0), 0)
+    rotate(var(--hero-rotate, 0deg))
+    scale(var(--hero-scale, 1));
+  transform-origin: center;
+  will-change: opacity, transform;
+}
+
+.hero-kinetic-word--display {
+  font-family: 'Iowan Old Style', Baskerville, Georgia, 'Times New Roman', serif;
+  font-size: clamp(3.2rem, 7.8vw, 9rem);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.075em;
+  line-height: 0.82;
+  text-shadow: 0 18px 55px rgba(4, 14, 20, 0.25);
+  white-space: nowrap;
+}
+
+.hero-kinetic-word--wide {
+  font-family: 'Iowan Old Style', Baskerville, Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.4rem, 6.2vw, 7.4rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.92;
+  white-space: nowrap;
+}
+
+.hero-kinetic-word--quiet {
+  color: var(--hero-gold);
+  font-family: SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+  font-size: clamp(0.78rem, 1.1vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero-kinetic-word--vertical {
+  font-family: SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+  font-size: clamp(0.72rem, 1vw, 0.95rem);
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+}
+
+.hero-draw-hint {
+  align-items: center;
+  bottom: clamp(1.4rem, 4vh, 3rem);
+  color: rgba(255, 248, 235, 0.78);
+  display: flex;
+  font-family: SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+  font-size: 0.68rem;
+  gap: 0.7rem;
+  left: clamp(1.25rem, 4vw, 4rem);
+  letter-spacing: 0.16em;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+.hero-draw-hint::before {
+  background: var(--hero-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px rgba(230, 188, 104, 0.16);
+  content: '';
+  height: 6px;
+  width: 6px;
+}
+
+#hero-sketch-canvas.pencil-cursor {
+  cursor:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg transform='rotate(-42 16 16)'%3E%3Cpath d='M14 3h4v21h-4z' fill='%23f7df9b' stroke='%23172c3d' stroke-width='1.4'/%3E%3Cpath d='M14 24l2 5 2-5z' fill='%23fff8eb' stroke='%23172c3d' stroke-width='1.4'/%3E%3Cpath d='M14 3h4v4h-4z' fill='%23e88774'/%3E%3C/g%3E%3C/svg%3E") 16 28,
+    crosshair;
+}
+
 [data-user-color-scheme='dark'] {
   --signal-ink: #edf4fb;
   --signal-paper: #17222d;
@@ -165,6 +321,7 @@
 
 #board .signal-stream__card > .index-info {
   align-self: end;
+  min-width: 0;
   padding: clamp(1.5rem, 4vw, 3.75rem);
 }
 
@@ -180,9 +337,16 @@
 }
 
 #board .signal-stream__card .index-header {
+  -webkit-box-orient: initial;
+  -webkit-line-clamp: unset;
+  display: block;
   font-size: clamp(1.55rem, 2.7vw, 2.65rem);
   letter-spacing: -0.035em;
   line-height: 1.04;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  text-overflow: clip;
+  white-space: normal;
 }
 
 #board .signal-stream__card .index-excerpt {
@@ -192,6 +356,10 @@
 
 #board .signal-stream__card .index-btm {
   color: var(--signal-muted);
+  flex-wrap: wrap;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  row-gap: 0.35rem;
 }
 
 @media (min-width: 960px) and (prefers-reduced-motion: no-preference) {
@@ -231,6 +399,30 @@
 }
 
 @media (max-width: 575px) {
+  .hero-story {
+    height: 135vh;
+  }
+
+  .hero-story .banner-text {
+    top: 49%;
+  }
+
+  .hero-story .banner-text .h2 {
+    font-size: clamp(1.45rem, 8vw, 2.2rem);
+  }
+
+  .hero-kinetic-word--display {
+    font-size: clamp(2.7rem, 15vw, 5rem);
+  }
+
+  .hero-kinetic-word--wide {
+    font-size: clamp(2rem, 12vw, 4rem);
+  }
+
+  .hero-draw-hint {
+    display: none;
+  }
+
   .signal-stream__sticky {
     border-radius: 20px;
     padding: 1rem;
@@ -260,6 +452,14 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-story {
+    height: 100vh;
+  }
+
+  .hero-kinetic-type {
+    display: none;
+  }
+
   .signal-stream__track,
   .signal-stream__progress span,
   #board .signal-stream__card > .index-img img {
