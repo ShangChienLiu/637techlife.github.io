@@ -26,7 +26,10 @@
     video.style.height = '100%';
     video.style.objectFit = 'cover';
     video.style.pointerEvents = 'none';
-    banner.style.backgroundImage = 'none';
+    // Fluid's startup code always parses banner.backgroundImage as url(...).
+    // Keep a transparent data URL in place so its image-loading progress hook
+    // remains valid after the real visual has moved into the video element.
+    banner.style.backgroundImage = 'url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==")';
     banner.prepend(video);
   }
 
