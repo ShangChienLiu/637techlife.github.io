@@ -253,6 +253,7 @@
 }
 
 .signal-stream__viewport {
+  container-type: inline-size;
   outline: none;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
@@ -282,12 +283,12 @@
   border-radius: 22px;
   box-shadow: var(--signal-shadow);
   display: grid !important;
-  flex: 0 0 min(78vw, 900px);
+  flex: 0 0 min(78vw, 900px, calc(100cqw - 2px));
   grid-template-columns: minmax(0, 1.18fr) minmax(260px, 0.82fr);
   margin: 0 !important;
   min-height: clamp(400px, 56vh, 610px);
   overflow: hidden;
-  width: min(78vw, 900px);
+  width: min(78vw, 900px, calc(100cqw - 2px));
 }
 
 #board .signal-stream__card > .index-img,
